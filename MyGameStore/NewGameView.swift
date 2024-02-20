@@ -18,8 +18,8 @@ struct NewGameView: View {
     var body: some View {
         Form {
                  Picker("Sélectionnez l'éditeur", selection: $selectedEditorIndex) {
-                     ForEach(0..<editors.count) { index in
-                         Text(self.editors[index].name).tag(index)
+                     ForEach(editors.indices, id: \.self) { editor in
+                         Text(self.editors[editor].name).tag(editor)
                      }
                  }
                  

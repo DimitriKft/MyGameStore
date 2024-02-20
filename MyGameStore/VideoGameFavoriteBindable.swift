@@ -14,7 +14,7 @@ struct VideoGameFavoriteBindable: View {
             VStack {
                 Toggle(videoGame.name, isOn: $videoGame.favorite)
                 HStack {
-                    Text("Editeur : \(videoGame.editor.name)")
+                    Text("Editeur : \(videoGame.editor!.name)")
                     Spacer()
                 }
             }

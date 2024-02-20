@@ -12,7 +12,7 @@ import SwiftData
 class VideoGame{
     @Attribute(.unique) var name: String
     var favorite: Bool
-    var editor :  Editor
+    var editor : Editor?
  
     init(name: String, favorite: Bool = false, editor: Editor) {
         self.name = name
