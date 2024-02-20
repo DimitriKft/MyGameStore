@@ -25,7 +25,7 @@ class VideoGame{
 @Model
 class Editor {
     var name: String
-    var videoGame: [VideoGame] = []
+    @Relationship(deleteRule: .cascade) var videoGame: [VideoGame] = []
     
     init(name: String) {
         self.name = name

@@ -32,11 +32,16 @@ struct EditorListView: View {
                               
                             }
                         }
-
-                     
                     }
+                    .onDelete(perform: delete)
                 }
             }
+        }
+    }
+    private func delete(at offsets: IndexSet){
+        for offset in offsets {
+            let editor = editors[offset]
+            context.delete(editor)
         }
     }
 }
