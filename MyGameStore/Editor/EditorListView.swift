@@ -11,16 +11,14 @@ import SwiftData
 struct EditorListView: View {
     @Environment(\.modelContext) private var context
     @Query private var editors: [Editor]
-    @State var name = ""
+    
+    
+    @State private var createNewEditor = false
     var body: some View {
         NavigationStack {
             
             VStack {
-                TextField("Nom de l'editeur", text: $name)
-                Button("Créer") {
-                    let newEditor = Editor(name: name )
-                    context.insert(newEditor)
-                }
+    
                 List{
                     
                     ForEach(editors){ editor in
@@ -34,6 +32,19 @@ struct EditorListView: View {
                         }
                     }
                     .onDelete(perform: delete)
+                }
+                .toolbar {
+                    Button {
+                        createNewEditor = true
+                    }label: {
+                        Image(systemName: "plus.circle.fill")
+                            .foregroundColor(.purple)
+                            .font(.system(size: 30))
+                    }
+                }
+                .sheet(isPresented: $createNewEditor) {
+                    NewEditorView()
+                        .presentationDetents([.medium])
                 }
             }
         }

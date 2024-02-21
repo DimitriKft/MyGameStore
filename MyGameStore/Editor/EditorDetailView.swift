@@ -15,7 +15,7 @@ struct EditorDetailView: View {
         VStack{
             Text(editor.name)
             Text("\(editor.videoGame.count)")
-            ForEach(editor.videoGame){ game in
+            List(editor.videoGame){ game in
                 Text(game.name)
             }
         }
@@ -31,9 +31,3 @@ struct EditorDetailView: View {
 
 
 
-//        List(editors) { editor in
-//            Text(editor.name)
-//            List(editor.videoGame){ game in
-//                Text(game.name)
-//            }
-//        }
