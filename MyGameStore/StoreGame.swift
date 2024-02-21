@@ -18,7 +18,12 @@ struct StoreGame: View {
             NavigationLink {
                 EditorListView()
             } label: {
-                Text("Liste des Editeurs")
+                Text("Liste des editeurs")
+            }
+            NavigationLink {
+                FavoritListGameView()
+            } label: {
+                Text("Liste des favoris")
             }
 
         }
