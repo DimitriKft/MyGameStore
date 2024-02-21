@@ -15,8 +15,8 @@ struct EditorDetailView: View {
         VStack{
             VStack(alignment: .leading){
                 Text(editor.name)
-                    .font(.title)
-                    .fontWeight(.bold)
+                    .foregroundStyle(.purple)
+                    .fontWeight(.medium)
                 HStack{
                     Text("Nombre de jeu de l'éditeur : ")
                     Text("\(editor.videoGame.count)")
@@ -27,6 +27,8 @@ struct EditorDetailView: View {
             .padding()
                 List(editor.videoGame){ game in
                     Text(game.name)
+                        .foregroundStyle(.purple)
+                        .fontWeight(.medium)
                 }
            
   

@@ -27,6 +27,8 @@ struct EditorListView: View {
                         } label: {
                             HStack{
                                 Text(editor.name)
+                                    .foregroundStyle(.purple)
+                                    .fontWeight(.medium)
                               
                             }
                         }

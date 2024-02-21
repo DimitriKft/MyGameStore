@@ -17,6 +17,8 @@ struct FavoritListGameView: View {
                 ForEach(myGames){ game in
                     if game.favorite == true{
                         Text(game.name)
+                            .foregroundStyle(.purple)
+                            .fontWeight(.medium)
                     }
                 }
             }

@@ -16,8 +16,6 @@ struct NewEditorView: View {
     
     var body: some View {
         Form {
-                 
-                 
                  TextField("Nom de l'editeur", text: $name)
                  
                  Button("Créer") {
@@ -29,8 +27,9 @@ struct NewEditorView: View {
                      dismiss()
                    
                  }
+                 .tint(.purple)
+                 .fontWeight(.medium)
              }
-        
     }
 }
 

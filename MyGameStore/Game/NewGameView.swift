@@ -35,6 +35,8 @@ struct NewGameView: View {
                     showAlert = true
                 }
             }
+            .tint(.purple)
+            .fontWeight(.medium)
         }
         .alert("Attention", isPresented: $showAlert) {
             Button("OK", role: .cancel) { }
