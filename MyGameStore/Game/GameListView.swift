@@ -20,11 +20,6 @@ struct GameListView: View {
     var body: some View {
       
             VStack {
-                NavigationLink {
-                    FavoritListGameView()
-                } label: {
-                    Text("Favori")
-                }
                 List{
                     Section("Mes jeux") {
                         ForEach(games) { game in
@@ -39,12 +34,14 @@ struct GameListView: View {
                   
                 }
             }
+            .navigationBarTitle("Mes jeux", displayMode: .large)
+
             .toolbar {
                 Button {
                     createNewGame = true
                 }label: {
                     Image(systemName: "plus.circle.fill")
-                        .foregroundColor(.orange)
+                        .foregroundColor(.purple)
                         .font(.system(size: 30))
                 }
             }

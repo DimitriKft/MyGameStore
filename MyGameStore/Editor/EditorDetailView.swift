@@ -13,14 +13,25 @@ struct EditorDetailView: View {
 
     var body: some View {
         VStack{
-            Text(editor.name)
-            Text("\(editor.videoGame.count)")
-            List(editor.videoGame){ game in
-                Text(game.name)
+            VStack(alignment: .leading){
+                Text(editor.name)
+                    .font(.title)
+                    .fontWeight(.bold)
+                HStack{
+                    Text("Nombre de jeu de l'éditeur : ")
+                    Text("\(editor.videoGame.count)")
+                }
+                .font(.headline)
+                .foregroundStyle(.secondary)
             }
+            .padding()
+                List(editor.videoGame){ game in
+                    Text(game.name)
+                }
+           
+  
         }
-     
-       }
+    }
 }
 
 //#Preview {

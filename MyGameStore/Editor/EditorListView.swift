@@ -15,7 +15,7 @@ struct EditorListView: View {
     
     @State private var createNewEditor = false
     var body: some View {
-        NavigationStack {
+
             
             VStack {
     
@@ -47,7 +47,8 @@ struct EditorListView: View {
                         .presentationDetents([.medium])
                 }
             }
-        }
+            .navigationBarTitle("Editeurs", displayMode: .large)
+
     }
     private func delete(at offsets: IndexSet){
         for offset in offsets {
